@@ -1,5 +1,6 @@
 #include "Planner.h"
 #include <algorithm>
+#include <cmath>
 
 Node::Node(Vec3i coordinates_, Node *Parent_) {
   Parent = Parent_;
