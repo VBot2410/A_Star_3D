@@ -56,18 +56,3 @@ TEST(Planner,Start_Point_Test){
     ASSERT_EQ(Coordinates[1],Start_Point);
     ASSERT_EQ(Coordinates[2],Start_Point);
 }
-
-TEST(Planner,End_Point_Test){
-  std::vector<double>Start={0,0,0};
-  std::vector<double>Goal={2,2,2};
-  std::vector<int>Start_Node=Map.Build_Node(Start);
-  std::vector<int>Goal_Node=Map.Build_Node(Goal);
-  auto path = Plan.findPath( {Start_Node[0],Start_Node[1],Start_Node[2]},{Goal_Node[0],Goal_Node[1],Goal_Node[2]});
-  int End_Point=2;
-  auto coordinate=path[0];
-    std::vector<int>Discrete_Node={coordinate.x,coordinate.y,coordinate.z};
-    std::vector<double>Coordinates=Map.Get_Coordinate(Discrete_Node);
-    ASSERT_EQ(Coordinates[0],End_Point);
-    ASSERT_EQ(Coordinates[1],End_Point);
-    ASSERT_EQ(Coordinates[2],End_Point);
-}
