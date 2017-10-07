@@ -44,4 +44,5 @@ for (auto& coordinate : path) {
   std::vector<double>Coordinates=Map.Get_Coordinate(Discrete_Node);
   std::cout<<Coordinates[0]<<" "<<Coordinates[1]<<" "<<Coordinates[2]<<"\n";
 }
+return 0;
 }
