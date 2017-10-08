@@ -1,6 +1,9 @@
-#include "Planner.h"
+#include "../include/Planner.h"
 #include <algorithm>
 #include <cmath>
+#include <utility>
+#include <vector>
+#include <set>
 
 Node::Node(Vec3i coordinates_, Node *Parent_) {
   Parent = Parent_;
@@ -17,16 +20,19 @@ bool Vec3i::operator ==(const Vec3i& coordinates_) {
 }
 
 Vec3i operator +(const Vec3i& left_, const Vec3i& right_) {
-  return {left_.x + right_.x, left_.y + right_.y,left_.z + right_.z};
+  return {left_.x + right_.x, left_.y + right_.y, left_.z + right_.z};
 }
 
 Planner::Planner() {
   Set_Heuristic(&Heuristic::Euclidean);
   direction = {
-    { 0,0,1}, {0,1,0}, {1,0,0}, {0,0,-1}, {0,-1,0}, {-1,0,0}, {0,1,1}, {1,0,1}, {1,1,0},
-    { 0,-1,-1}, {-1,0,-1}, {-1,-1,0},
-    { 0,1,-1}, {0,-1,1}, {1,0,-1}, {-1,0,1}, {1,-1,0}, {-1,1,0}, {1,1,-1}, {1,-1,1},
-    { -1,1,1}, {1,-1,-1}, {-1,-1,1}, {-1,1,-1}, {1,1,1}, {-1,-1,-1}
+    { 0 , 0 , 1}, {0 , 1, 0}, { 1, 0, 0}, { 0, 0, -1},
+    { 0, -1, 0}, { -1, 0, 0}, { 0 , 1, 1}, { 1, 0, 1},
+    { 1, 1, 0}, { 0, -1, -1}, { -1, 0, -1}, { -1, -1, 0},
+    { 0, 1, -1}, { 0, -1, 1}, { 1, 0, -1}, { -1, 0, 1},
+    { 1, -1, 0}, { -1, 1, 0}, { 1, 1, -1}, { 1, -1, 1},
+    { -1, 1, 1}, { 1, -1, -1}, { -1, -1, 1}, { -1, 1, -1},
+    { 1, 1, 1}, { -1, -1, -1}
   };
 }
 
@@ -115,7 +121,8 @@ bool Planner::Detect_Collision(Vec3i coordinates_) {
 }
 
 Vec3i Heuristic::Distance(Vec3i Now_, Vec3i Neighbor_) {
-  return {abs(Now_.x - Neighbor_.x), abs(Now_.y - Neighbor_.y),abs(Now_.z - Neighbor_.z)};
+  return {abs(Now_.x - Neighbor_.x), abs(Now_.y - Neighbor_.y),
+    abs(Now_.z - Neighbor_.z)};
 }
 
 double Heuristic::Euclidean(Vec3i Now_, Vec3i Neighbor_) {
@@ -124,3 +131,5 @@ double Heuristic::Euclidean(Vec3i Now_, Vec3i Neighbor_) {
       * sqrt(pow(delta.x, 2) + pow(delta.y, 2) + pow(delta.z, 2)));
 }
 
+Planner::~Planner() {
+}

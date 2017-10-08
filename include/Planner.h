@@ -1,5 +1,5 @@
-#ifndef APP_PLANNER_H_
-#define APP_PLANNER_H_
+#ifndef MID_TERM_A_STAR_3D_INCLUDE_PLANNER_H_
+#define MID_TERM_A_STAR_3D_INCLUDE_PLANNER_H_
 
 #include <vector>
 #include <functional>
@@ -14,8 +14,7 @@ struct Node {
   double G, H;
   Vec3i coordinates;
   Node *Parent;
-
-  Node(Vec3i coord_, Node *Parent_ = nullptr);
+  explicit Node(Vec3i coord_, Node *Parent_ = nullptr);
   double Get_Score();
 };
 
@@ -29,12 +28,11 @@ class Planner {
   void Set_Heuristic(std::function<double(Vec3i, Vec3i)> heuristic_);
   std::vector<Vec3i> findPath(Vec3i Current_, Vec3i Neighbor_);
   void Add_Collision(Vec3i coordinates_);
-
- private:
   std::function<double(Vec3i, Vec3i)> heuristic;
   std::vector<Vec3i> direction, walls;
   Vec3i World_Size;
   double Directions;
+  virtual ~Planner();
 };
 
 class Heuristic {
@@ -44,4 +42,4 @@ class Heuristic {
   static double Euclidean(Vec3i Current_, Vec3i Neighbor_);
 };
 
-#endif /*APP_PLANNER_H_*/
+#endif  // MID_TERM_A_STAR_3D_INCLUDE_PLANNER_H_
