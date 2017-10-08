@@ -9,8 +9,8 @@
 class Build_Map {
  public:
   Build_Map(std::vector<double>, double, double, double);
-  double x0, y0, z0, x1, y1, z1;
   std::vector<double> Boundary;
+  std::vector<int> World;
   double xy_res, z_res, margin;
   int World_X, World_Y, World_Z;
   std::vector<int> World_Dimensions();

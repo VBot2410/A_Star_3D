@@ -5,9 +5,9 @@
 #include <vector>
 #include <set>
 
-Node::Node(Vec3i coordinates_, Node *Parent_) {
+Node::Node(Vec3i coordinates_, Node *Parent_)
+    : coordinates(coordinates_) {
   Parent = Parent_;
-  coordinates = coordinates_;
   G = H = 0;
 }
 
@@ -23,20 +23,17 @@ Vec3i operator +(const Vec3i& left_, const Vec3i& right_) {
   return {left_.x + right_.x, left_.y + right_.y, left_.z + right_.z};
 }
 
-Planner::Planner() {
-  Set_Heuristic(&Heuristic::Euclidean);
+Planner::Planner(Vec3i World_Size_) {
+  Set_Heuristic(&Planner::Euclidean);
   direction = {
-    { 0 , 0 , 1}, {0 , 1, 0}, { 1, 0, 0}, { 0, 0, -1},
-    { 0, -1, 0}, { -1, 0, 0}, { 0 , 1, 1}, { 1, 0, 1},
-    { 1, 1, 0}, { 0, -1, -1}, { -1, 0, -1}, { -1, -1, 0},
-    { 0, 1, -1}, { 0, -1, 1}, { 1, 0, -1}, { -1, 0, 1},
-    { 1, -1, 0}, { -1, 1, 0}, { 1, 1, -1}, { 1, -1, 1},
-    { -1, 1, 1}, { 1, -1, -1}, { -1, -1, 1}, { -1, 1, -1},
-    { 1, 1, 1}, { -1, -1, -1}
+    { 0 , 0 , 1}, {0 , 1, 0}, {1, 0, 0}, {0, 0, -1},
+    { 0, -1, 0}, {-1, 0, 0}, {0 , 1, 1}, {1, 0, 1},
+    { 1, 1, 0}, {0, -1, -1}, {-1, 0, -1}, {-1, -1, 0},
+    { 0, 1, -1}, {0, -1, 1}, {1, 0, -1}, {-1, 0, 1},
+    { 1, -1, 0}, {-1, 1, 0}, {1, 1, -1}, {1, -1, 1},
+    { -1, 1, 1}, {1, -1, -1}, {-1, -1, 1}, {-1, 1, -1},
+    { 1, 1, 1}, {-1, -1, -1}
   };
-}
-
-void Planner::Set_World_Size(Vec3i World_Size_) {
   World_Size = World_Size_;
 }
 
@@ -120,12 +117,12 @@ bool Planner::Detect_Collision(Vec3i coordinates_) {
   return false;
 }
 
-Vec3i Heuristic::Distance(Vec3i Now_, Vec3i Neighbor_) {
+Vec3i Planner::Distance(Vec3i Now_, Vec3i Neighbor_) {
   return {abs(Now_.x - Neighbor_.x), abs(Now_.y - Neighbor_.y),
     abs(Now_.z - Neighbor_.z)};
 }
 
-double Heuristic::Euclidean(Vec3i Now_, Vec3i Neighbor_) {
+double Planner::Euclidean(Vec3i Now_, Vec3i Neighbor_) {
   auto delta = std::move(Distance(Now_, Neighbor_));
   return static_cast<double>(100
       * sqrt(pow(delta.x, 2) + pow(delta.y, 2) + pow(delta.z, 2)));

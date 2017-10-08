@@ -4,18 +4,18 @@
 #include "../include/Build_Map.h"
 
 Build_Map::Build_Map(std::vector<double> _Boundary, double _xy_res,
-                     double _z_res, double _margin) {
-  Boundary = _Boundary;
-  xy_res = _xy_res;
-  z_res = _z_res;
-  margin = _margin;
+                     double _z_res, double _margin)
+    : Boundary(_Boundary),
+      xy_res(_xy_res),
+      z_res(_z_res),
+      margin(_margin) {
+  World_X = (Boundary[3] - Boundary[0]) / xy_res;
+  World_Y = (Boundary[4] - Boundary[1]) / xy_res;
+  World_Z = (Boundary[5] - Boundary[2]) / z_res;
+  World = {World_X, World_Y, World_Z};
 }
 
 std::vector<int> Build_Map::World_Dimensions() {
-  int World_X = (Boundary[3] - Boundary[0]) / xy_res;
-  int World_Y = (Boundary[4] - Boundary[1]) / xy_res;
-  int World_Z = (Boundary[5] - Boundary[2]) / z_res;
-  std::vector<int> World = { World_X, World_Y, World_Z };
   return World;
 }
 

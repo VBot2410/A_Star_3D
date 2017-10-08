@@ -9,7 +9,8 @@ double margin = 0.1;
 std::vector<double> Boundary = { 0.0, 0.0, 0.0, 10.0, 10.0, 10.0 };
 std::vector<std::vector<double>> Obstacle = { { 5.0, 0.0, 0.0, 5.0, 10, 10 } };
 Build_Map Map = Build_Map(Boundary, xy_res, z_res, margin);
-Planner Plan;
+std::vector<int> World = Map.World_Dimensions();
+Planner Plan = Planner({ World[0], World[1], World[2] });
 std::vector<double> Start = { 0, 0, 0 };
 std::vector<double> Goal = { 2, 2, 2 };
 std::vector<int> Start_Node = Map.Build_Node(Start);
@@ -24,9 +25,6 @@ TEST(Build_Map, World_Dimensions_Check) {
 }
 
 TEST(Build_Map, Obstacle_Creation_Check) {
-  Map.World_X = 10;
-  Map.World_Y = 10;
-  Map.World_Z = 10;
   std::vector<int> Obstacle_Extrema = Map.Build_Obstacle(Obstacle[0]);
   std::vector<int> Test_Obstacle = { 4, 0, 0, 6, 10, 10 };
   ASSERT_EQ(Obstacle_Extrema, Test_Obstacle);
@@ -50,7 +48,7 @@ TEST(Planner, Start_Point_Test) {
   auto coordinate = path[0];
   std::vector<int> Test_Node = { coordinate.x, coordinate.y, coordinate.z };
   std::vector<double> Coordinates = Map.Get_Coordinate(Test_Node);
-  ASSERT_EQ(Coordinates[0], 0);
-  ASSERT_EQ(Coordinates[1], 0);
-  ASSERT_EQ(Coordinates[2], 0);
+  ASSERT_EQ(Coordinates[0], 2);
+  ASSERT_EQ(Coordinates[1], 2);
+  ASSERT_EQ(Coordinates[2], 2);
 }

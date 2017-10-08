@@ -12,14 +12,13 @@ int main() {
   std::vector<std::vector<double>> Obstacle = {
       { 0.0, 2.0, 0.0, 10.0, 2.5, 1.5 }, { 0.0, 2.0, 4.5, 10.0, 2.5, 6.0 }, {
           0.0, 2.0, 1.5, 3.0, 2.5, 4.5 } };
-  Planner Plan;
 
   // Map_Build
 
   Build_Map Map = Build_Map(Boundary, xy_res, z_res, margin);
 
   std::vector<int> World = Map.World_Dimensions();
-  Plan.Set_World_Size({ World[0], World[1], World[2] });
+  Planner Plan = Planner({ World[0], World[1], World[2] });
 
   for (const std::vector<double> &v : Obstacle) {
     std::vector<int> Obstacle_Extrema = Map.Build_Obstacle(v);
@@ -36,8 +35,8 @@ int main() {
   }
 
 // Calculations
-  Plan.Set_Heuristic(Heuristic::Euclidean);
-  std::cout << "Calculating Shortest path ... \n";
+  Plan.Set_Heuristic(Planner::Euclidean);
+  std::cout << "Calculating Shortest Path ... \n";
   std::vector<double> Start = { 0, 0.5, 3 };
   std::vector<double> Goal = { 3.9, 6.4, 0 };
   std::vector<int> Start_Node = Map.Build_Node(Start);
