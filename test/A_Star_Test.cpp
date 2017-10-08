@@ -44,11 +44,33 @@ TEST(Build_Map, Coordinate_Generation_Check) {
   ASSERT_EQ(Test_Coordinates, Generated_Coordinates);
 }
 
-TEST(Planner, Start_Point_Test) {
+TEST(Planner, Goal_Point_Test) {
   auto coordinate = path[0];
   std::vector<int> Test_Node = { coordinate.x, coordinate.y, coordinate.z };
   std::vector<double> Coordinates = Map.Get_Coordinate(Test_Node);
   ASSERT_EQ(Coordinates[0], 2);
   ASSERT_EQ(Coordinates[1], 2);
   ASSERT_EQ(Coordinates[2], 2);
+}
+
+TEST(Planner, Start_Point_Test) {
+  auto coordinate = path[2];
+  std::vector<int> Test_Node = { coordinate.x, coordinate.y, coordinate.z };
+  std::vector<double> Coordinates = Map.Get_Coordinate(Test_Node);
+  ASSERT_EQ(Coordinates[0], 0);
+  ASSERT_EQ(Coordinates[1], 0);
+  ASSERT_EQ(Coordinates[2], 0);
+}
+
+TEST(Planner, Path_Generation) {
+  int value = 2;
+  for (auto& coordinate : path) {
+    std::vector<int> Discrete_Node =
+        { coordinate.x, coordinate.y, coordinate.z };
+    std::vector<double> Coordinates = Map.Get_Coordinate(Discrete_Node);
+    ASSERT_EQ(Coordinates[0], value);
+    ASSERT_EQ(Coordinates[1], value);
+    ASSERT_EQ(Coordinates[2], value);
+    value = value - 1;
+  }
 }
