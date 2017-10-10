@@ -22,31 +22,23 @@ std::vector<int> Build_Map::World_Dimensions() {
 // Obstacles
 
 std::vector<int> Build_Map::Build_Obstacle(std::vector<double> v) {
-  int minx = std::floor(((v[0] - Boundary[0] - margin) / xy_res));
-  if (minx < 0) {
-    minx = 0;
-  }
-  int miny = std::floor(((v[1] - Boundary[1] - margin) / xy_res));
-  if (miny < 0) {
-    miny = 0;
-  }
-  int minz = std::floor(((v[2] - Boundary[2] - margin) / z_res));
-  if (minz < 0) {
-    minz = 0;
-  }
-
-  int maxx = std::ceil(((v[3] - Boundary[0] + margin) / xy_res));
-  if (maxx > World_X) {
-    maxx = World_X;
-  }
-  int maxy = std::ceil(((v[4] - Boundary[1] + margin) / xy_res));
-  if (maxy > World_Y) {
-    maxy = World_Y;
-  }
-  int maxz = std::ceil(((v[5] - Boundary[2] + margin) / z_res));
-  if (maxz > World_Z) {
-    maxz = World_Z;
-  }
+  int minx = std::max(
+      static_cast<int>(std::floor(((v[0] - Boundary[0] - margin) / xy_res))),
+      0);
+  int miny = std::max(
+      static_cast<int>(std::floor(((v[1] - Boundary[1] - margin) / xy_res))),
+      0);
+  int minz = std::max(
+      static_cast<int>(std::floor(((v[2] - Boundary[2] - margin) / z_res))), 0);
+  int maxx = std::min(
+      static_cast<int>(std::ceil(((v[3] - Boundary[0] + margin) / xy_res))),
+      World_X);
+  int maxy = std::min(
+      static_cast<int>(std::ceil(((v[4] - Boundary[1] + margin) / xy_res))),
+      World_Y);
+  int maxz = std::min(
+      static_cast<int>(std::ceil(((v[5] - Boundary[2] + margin) / z_res))),
+      World_Z);
   std::vector<int> Obstacle_Extrema = { minx, miny, minz, maxx, maxy, maxz };
   return Obstacle_Extrema;
 }
