@@ -33,7 +33,7 @@ Typical implementations of A* use a priority queue to perform the repeated selec
    - Documentation.
    - Code Optimization.
 
-Product and Iteration Backlogs can be found [Here](https://docs.google.com/a/terpmail.umd.edu/spreadsheets/d/1OG3C1JBhDQzr5JbrNKvgw2EXLqxJdgZZMIk44BRrPIw/edit?usp=sharing)
+Product and Iteration Backlogs can be found [Here](https://docs.google.com/spreadsheets/d/1OG3C1JBhDQzr5JbrNKvgw2EXLqxJdgZZMIk44BRrPIw/edit?usp=sharing)
 
 UML Diagrams can be found [Here](https://github.com/VBot2410/A_Star_3D/tree/master/UML)
 
