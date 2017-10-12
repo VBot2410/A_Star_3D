@@ -74,3 +74,19 @@ TEST(Planner, Path_Generation) {
     value = value - 1;
   }
 }
+
+TEST(Planner, Manhattan_Test) {
+  Plan.Set_Heuristic(Planner::Manhattan);
+  auto path_1 = Plan.findPath({ Start_Node[0], Start_Node[1], Start_Node[2] },
+                              { Goal_Node[0], Goal_Node[1], Goal_Node[2] });
+  int value = 2;
+  for (auto& coordinate : path_1) {
+    std::vector<int> Discrete_Node =
+        { coordinate.x, coordinate.y, coordinate.z };
+    std::vector<double> Coordinates = Map.Get_Coordinate(Discrete_Node);
+    ASSERT_EQ(Coordinates[0], value);
+    ASSERT_EQ(Coordinates[1], value);
+    ASSERT_EQ(Coordinates[2], value);
+    value = value - 1;
+  }
+}
