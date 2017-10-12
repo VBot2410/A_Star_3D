@@ -35,7 +35,7 @@ int main() {
   }
 
 // Calculations
-  Plan.Set_Heuristic(Planner::Euclidean);
+  Plan.Set_Heuristic(Planner::Manhattan);
   std::cout << "Calculating Shortest Path ... \n";
   std::vector<double> Start = { 0, 0.5, 3 };
   std::vector<double> Goal = { 3.9, 6.4, 0 };

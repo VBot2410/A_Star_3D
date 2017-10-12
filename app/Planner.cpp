@@ -128,5 +128,10 @@ double Planner::Euclidean(Vec3i Now_, Vec3i Neighbor_) {
       * sqrt(pow(delta.x, 2) + pow(delta.y, 2) + pow(delta.z, 2)));
 }
 
+double Planner::Manhattan(Vec3i Now_, Vec3i Neighbor_) {
+  auto delta = std::move(Distance(Now_, Neighbor_));
+  return static_cast<double>(100 * (delta.x + delta.y + delta.z));
+}
+
 Planner::~Planner() {
 }

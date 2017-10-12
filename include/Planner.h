@@ -26,6 +26,7 @@ class Planner {
  public:
   explicit Planner(Vec3i);
   static double Euclidean(Vec3i, Vec3i);
+  static double Manhattan(Vec3i, Vec3i);
   void Set_Heuristic(std::function<double(Vec3i, Vec3i)>);
   std::vector<Vec3i> findPath(Vec3i, Vec3i);
   void Add_Collision(Vec3i);
