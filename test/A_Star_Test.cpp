@@ -90,3 +90,15 @@ TEST(Planner, Manhattan_Test) {
     value = value - 1;
   }
 }
+
+TEST(Planner, Collision_Test) {
+  Plan.Add_Collision({ 1, 1, 1 });
+  auto path_2 = Plan.findPath({ Start_Node[0], Start_Node[1], Start_Node[2] },
+                              { Goal_Node[0], Goal_Node[1], Goal_Node[2] });
+  for (auto& coordinate : path_2) {
+    std::vector<int> Discrete_Node =
+        { coordinate.x, coordinate.y, coordinate.z };
+    std::vector<double> Coordinates = Map.Get_Coordinate(Discrete_Node);
+    EXPECT_NE((Coordinates[0] * Coordinates[1] * Coordinates[2]), 1);
+  }
+}
