@@ -1,9 +1,10 @@
-#include "../include/Planner.h"
+#include <iostream>
 #include <algorithm>
 #include <cmath>
 #include <utility>
 #include <vector>
 #include <set>
+#include "../include/Planner.h"
 
 Node::Node(Vec3i coordinates_, Node *Parent_)
     : coordinates(coordinates_) {
@@ -94,7 +95,9 @@ std::vector<Vec3i> Planner::findPath(Vec3i Now_, Vec3i Neighbor_) {
     path.push_back(current->coordinates);
     current = current->Parent;
   }
-
+  if (path.empty() == true) {
+    std::cout << "Cannot Reach the Goal";
+  }
   return path;
 }
 
