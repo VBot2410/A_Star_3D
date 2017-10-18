@@ -1,0 +1,107 @@
+\hypertarget{structNode}{}\section{Node Struct Reference}
+\label{structNode}\index{Node@{Node}}
+
+
+\hyperlink{structNode}{Node} of type Struct which Stores Various Property values of the Nodes.  
+
+
+
+
+{\ttfamily \#include $<$Planner.\+h$>$}
+
+
+
+Collaboration diagram for Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{structNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structNode_a947e5d8f76e9600c262ad97aefa67d8e}{Node} (\hyperlink{structVec3i}{Vec3i}, \hyperlink{structNode}{Node} $\ast$Parent\+\_\+=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructor for \hyperlink{structNode}{Node} Struct Initializes the \hyperlink{structNode}{Node} features to default values. \end{DoxyCompactList}\item 
+double \hyperlink{structNode_a4a45812196b32f307390cd277953a6a0}{Get\+\_\+\+Score} ()
+\begin{DoxyCompactList}\small\item\em Get\+\_\+\+Score function of return type double from \hyperlink{structNode}{Node} struct It Adds the G and H values of current node to give the F value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{structNode_aa6f89ef69e082186d2ab507ba1376940}{G}
+\item 
+double {\bfseries H}\hypertarget{structNode_a04d5df1c75751f4e12d745cf9415e672}{}\label{structNode_a04d5df1c75751f4e12d745cf9415e672}
+
+\item 
+\hyperlink{structVec3i}{Vec3i} \hyperlink{structNode_a5415b97e157699fceb6cd841c8767239}{coordinates}
+\item 
+\hyperlink{structNode}{Node} $\ast$ \hyperlink{structNode_a5033f94f526ada5d9001143e2bc9dd48}{Parent}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{structNode}{Node} of type Struct which Stores Various Property values of the Nodes. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\subsubsection[{\texorpdfstring{Node(\+Vec3i, Node $\ast$\+Parent\+\_\+=nullptr)}{Node(Vec3i, Node *Parent_=nullptr)}}]{\setlength{\rightskip}{0pt plus 5cm}Node\+::\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Vec3i}}]{coordinates\+\_\+, }
+\item[{{\bf Node} $\ast$}]{Parent\+\_\+ = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{structNode_a947e5d8f76e9600c262ad97aefa67d8e}{}\label{structNode_a947e5d8f76e9600c262ad97aefa67d8e}
+
+
+Constructor for \hyperlink{structNode}{Node} Struct Initializes the \hyperlink{structNode}{Node} features to default values. 
+
+Constructor for \hyperlink{structNode}{Node} Struct
+
+
+\begin{DoxyParams}{Parameters}
+{\em coordinates} & of type \hyperlink{structVec3i}{Vec3i} struct stores Coordinates of the \hyperlink{structNode}{Node} \\
+\hline
+{\em Parent} & of type Pointer stores pointer to the Parent of current \hyperlink{structNode}{Node} \\
+\hline
+{\em G} & Cost-\/to-\/\+Start of type double initialized to 0 \\
+\hline
+{\em H} & Heuristic of type double initialized to 0 \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Node@{Node}!Get\+\_\+\+Score@{Get\+\_\+\+Score}}
+\index{Get\+\_\+\+Score@{Get\+\_\+\+Score}!Node@{Node}}
+\subsubsection[{\texorpdfstring{Get\+\_\+\+Score()}{Get_Score()}}]{\setlength{\rightskip}{0pt plus 5cm}double Node\+::\+Get\+\_\+\+Score (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{structNode_a4a45812196b32f307390cd277953a6a0}{}\label{structNode_a4a45812196b32f307390cd277953a6a0}
+
+
+Get\+\_\+\+Score function of return type double from \hyperlink{structNode}{Node} struct It Adds the G and H values of current node to give the F value. 
+
+Get\+\_\+\+Score returns the F value of type double (F=G+H)
+
+\begin{DoxyReturn}{Returns}
+(G+H) of type double 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\index{Node@{Node}!coordinates@{coordinates}}
+\index{coordinates@{coordinates}!Node@{Node}}
+\subsubsection[{\texorpdfstring{coordinates}{coordinates}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vec3i} Node\+::coordinates}\hypertarget{structNode_a5415b97e157699fceb6cd841c8767239}{}\label{structNode_a5415b97e157699fceb6cd841c8767239}
+coordinates of type \hyperlink{structVec3i}{Vec3i} struct which stores coordinates of \hyperlink{structNode}{Node} \index{Node@{Node}!G@{G}}
+\index{G@{G}!Node@{Node}}
+\subsubsection[{\texorpdfstring{G}{G}}]{\setlength{\rightskip}{0pt plus 5cm}double Node\+::G}\hypertarget{structNode_aa6f89ef69e082186d2ab507ba1376940}{}\label{structNode_aa6f89ef69e082186d2ab507ba1376940}
+G of type double which stores the Cost-\/to-\/\+Start value H of type double which is the heuristic value \index{Node@{Node}!Parent@{Parent}}
+\index{Parent@{Parent}!Node@{Node}}
+\subsubsection[{\texorpdfstring{Parent}{Parent}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node}$\ast$ Node\+::\+Parent}\hypertarget{structNode_a5033f94f526ada5d9001143e2bc9dd48}{}\label{structNode_a5033f94f526ada5d9001143e2bc9dd48}
+Parent of type pointer which points to the parent node of current node 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{Planner_8h}{Planner.\+h}\item 
+app/\hyperlink{Planner_8cpp}{Planner.\+cpp}\end{DoxyCompactItemize}

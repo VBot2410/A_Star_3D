@@ -1,0 +1,191 @@
+\hypertarget{classBuild__Map}{}\section{Build\+\_\+\+Map Class Reference}
+\label{classBuild__Map}\index{Build\+\_\+\+Map@{Build\+\_\+\+Map}}
+
+
+\hyperlink{classBuild__Map}{Build\+\_\+\+Map} class declaration.  
+
+
+
+
+{\ttfamily \#include $<$Build\+\_\+\+Map.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBuild__Map_a1c1ffb3382a1c259bd139076e3ea2bf5}{Build\+\_\+\+Map} (std\+::vector$<$ double $>$, double, double, double)
+\begin{DoxyCompactList}\small\item\em $<$ Public Access Specifier \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{classBuild__Map_a4471712db8fbd8c8bc2fdefe8c0f551d}{World\+\_\+\+Dimensions} ()
+\begin{DoxyCompactList}\small\item\em World\+\_\+\+Dimensions function returns the Discretized World Dimensions. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{classBuild__Map_ac702c59f16705f17230b565d998eecd3}{Build\+\_\+\+Obstacle} (std\+::vector$<$ double $>$)
+\begin{DoxyCompactList}\small\item\em Build\+\_\+\+Obstacle Creates Obstacle Representations in Discretized Workspace given the Obstacle Blocks in World. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{classBuild__Map_a69943048bf44783d8413fa2a932225f7}{Build\+\_\+\+Node} (std\+::vector$<$ double $>$)
+\begin{DoxyCompactList}\small\item\em Build\+\_\+\+Node creates the representation of a point from the world in Discretized Workspace. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \hyperlink{classBuild__Map_a9a0981707bd941c8b15a286ed5cff4aa}{Get\+\_\+\+Coordinate} (std\+::vector$<$ int $>$)
+\begin{DoxyCompactList}\small\item\em Get\+\_\+\+Coordinate creates the representation of a point from location in the Discretized Workspace. \end{DoxyCompactList}\item 
+virtual \hyperlink{classBuild__Map_a7e9cb965ff8a968a6c3c66b8411cbadc}{$\sim$\+Build\+\_\+\+Map} ()
+\begin{DoxyCompactList}\small\item\em Destructor for Class \hyperlink{classBuild__Map}{Build\+\_\+\+Map}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ double $>$ \hyperlink{classBuild__Map_a56252a2d4d8971e370547cdb8a67eb8f}{Boundary}
+\item 
+std\+::vector$<$ int $>$ \hyperlink{classBuild__Map_ae65f595ae4825d69ae9e70d664beb644}{World}
+\item 
+double \hyperlink{classBuild__Map_a8aaaec9d533e5ea2c98045a7727389d7}{xy\+\_\+res}
+\item 
+double {\bfseries z\+\_\+res}\hypertarget{classBuild__Map_a23d568ed7281ff5682fc4fc94c366ea2}{}\label{classBuild__Map_a23d568ed7281ff5682fc4fc94c366ea2}
+
+\item 
+double {\bfseries margin}\hypertarget{classBuild__Map_ae3b0853f9e6e9b8b10e81babcee41b51}{}\label{classBuild__Map_ae3b0853f9e6e9b8b10e81babcee41b51}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classBuild__Map}{Build\+\_\+\+Map} class declaration. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Build\+\_\+\+Map@{Build\+\_\+\+Map}!Build\+\_\+\+Map@{Build\+\_\+\+Map}}
+\index{Build\+\_\+\+Map@{Build\+\_\+\+Map}!Build\+\_\+\+Map@{Build\+\_\+\+Map}}
+\subsubsection[{\texorpdfstring{Build\+\_\+\+Map(std\+::vector$<$ double $>$, double, double, double)}{Build_Map(std::vector< double >, double, double, double)}}]{\setlength{\rightskip}{0pt plus 5cm}Build\+\_\+\+Map\+::\+Build\+\_\+\+Map (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ double $>$}]{\+\_\+\+Boundary, }
+\item[{double}]{\+\_\+xy\+\_\+res, }
+\item[{double}]{\+\_\+z\+\_\+res, }
+\item[{double}]{\+\_\+margin}
+\end{DoxyParamCaption}
+)}\hypertarget{classBuild__Map_a1c1ffb3382a1c259bd139076e3ea2bf5}{}\label{classBuild__Map_a1c1ffb3382a1c259bd139076e3ea2bf5}
+
+
+$<$ Public Access Specifier 
+
+Constructor for \hyperlink{classBuild__Map}{Build\+\_\+\+Map} Class.
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em Boundary} & has type double vector \& \{xmin,ymin,zmin,xmax,ymax,zmax\}format \\
+\hline
+{\em xy\+\_\+res} & has type double and stores x,y resolution \\
+\hline
+{\em z\+\_\+res} & has type double and stores z resolution \\
+\hline
+{\em margin} & has type double and stores the margin value for Robot Dimensions \\
+\hline
+{\em World} & has type double vector and stores World Dimensions \\
+\hline
+\end{DoxyParams}
+$<$ X Dimension
+
+$<$ Y Dimension
+
+$<$ Z Dimension \index{Build\+\_\+\+Map@{Build\+\_\+\+Map}!````~Build\+\_\+\+Map@{$\sim$\+Build\+\_\+\+Map}}
+\index{````~Build\+\_\+\+Map@{$\sim$\+Build\+\_\+\+Map}!Build\+\_\+\+Map@{Build\+\_\+\+Map}}
+\subsubsection[{\texorpdfstring{$\sim$\+Build\+\_\+\+Map()}{~Build_Map()}}]{\setlength{\rightskip}{0pt plus 5cm}Build\+\_\+\+Map\+::$\sim$\+Build\+\_\+\+Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classBuild__Map_a7e9cb965ff8a968a6c3c66b8411cbadc}{}\label{classBuild__Map_a7e9cb965ff8a968a6c3c66b8411cbadc}
+
+
+Destructor for Class \hyperlink{classBuild__Map}{Build\+\_\+\+Map}. 
+
+Destructor of \hyperlink{classBuild__Map}{Build\+\_\+\+Map} Class. 
+
+\subsection{Member Function Documentation}
+\index{Build\+\_\+\+Map@{Build\+\_\+\+Map}!Build\+\_\+\+Node@{Build\+\_\+\+Node}}
+\index{Build\+\_\+\+Node@{Build\+\_\+\+Node}!Build\+\_\+\+Map@{Build\+\_\+\+Map}}
+\subsubsection[{\texorpdfstring{Build\+\_\+\+Node(std\+::vector$<$ double $>$)}{Build_Node(std::vector< double >)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ int $>$ Build\+\_\+\+Map\+::\+Build\+\_\+\+Node (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ double $>$}]{Discrete}
+\end{DoxyParamCaption}
+)}\hypertarget{classBuild__Map_a69943048bf44783d8413fa2a932225f7}{}\label{classBuild__Map_a69943048bf44783d8413fa2a932225f7}
+
+
+Build\+\_\+\+Node creates the representation of a point from the world in Discretized Workspace. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Discrete} & has type double vector \& contains x,y,z values of a point in World. \\
+\hline
+{\em Built\+\_\+\+Node} & has type integer vector \& contains representation of a point in Discretized Workspace \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Built\+\_\+\+Node of type integer vector 
+\end{DoxyReturn}
+\index{Build\+\_\+\+Map@{Build\+\_\+\+Map}!Build\+\_\+\+Obstacle@{Build\+\_\+\+Obstacle}}
+\index{Build\+\_\+\+Obstacle@{Build\+\_\+\+Obstacle}!Build\+\_\+\+Map@{Build\+\_\+\+Map}}
+\subsubsection[{\texorpdfstring{Build\+\_\+\+Obstacle(std\+::vector$<$ double $>$)}{Build_Obstacle(std::vector< double >)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ int $>$ Build\+\_\+\+Map\+::\+Build\+\_\+\+Obstacle (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ double $>$}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{classBuild__Map_ac702c59f16705f17230b565d998eecd3}{}\label{classBuild__Map_ac702c59f16705f17230b565d998eecd3}
+
+
+Build\+\_\+\+Obstacle Creates Obstacle Representations in Discretized Workspace given the Obstacle Blocks in World. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & has type double vector \& contains obstacle boundary information \\
+\hline
+{\em Obstacle\+\_\+\+Extrema} & has type double vector \& contains the Obstale representation in Discretized Workspace \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Obstacle\+\_\+\+Extrema of type double vector 
+\end{DoxyReturn}
+\index{Build\+\_\+\+Map@{Build\+\_\+\+Map}!Get\+\_\+\+Coordinate@{Get\+\_\+\+Coordinate}}
+\index{Get\+\_\+\+Coordinate@{Get\+\_\+\+Coordinate}!Build\+\_\+\+Map@{Build\+\_\+\+Map}}
+\subsubsection[{\texorpdfstring{Get\+\_\+\+Coordinate(std\+::vector$<$ int $>$)}{Get_Coordinate(std::vector< int >)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ double $>$ Build\+\_\+\+Map\+::\+Get\+\_\+\+Coordinate (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ int $>$}]{Node\+\_\+\+Init}
+\end{DoxyParamCaption}
+)}\hypertarget{classBuild__Map_a9a0981707bd941c8b15a286ed5cff4aa}{}\label{classBuild__Map_a9a0981707bd941c8b15a286ed5cff4aa}
+
+
+Get\+\_\+\+Coordinate creates the representation of a point from location in the Discretized Workspace. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Node\+\_\+\+Init} & has type integer vector \& contains representation of a point in Discretized Workspace \\
+\hline
+{\em Coordinates\+\_\+\+Generated} & has type double vector and contains x,y,z values of a point in World. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Coordinates\+\_\+\+Generated of type double vector 
+\end{DoxyReturn}
+\index{Build\+\_\+\+Map@{Build\+\_\+\+Map}!World\+\_\+\+Dimensions@{World\+\_\+\+Dimensions}}
+\index{World\+\_\+\+Dimensions@{World\+\_\+\+Dimensions}!Build\+\_\+\+Map@{Build\+\_\+\+Map}}
+\subsubsection[{\texorpdfstring{World\+\_\+\+Dimensions()}{World_Dimensions()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ int $>$ Build\+\_\+\+Map\+::\+World\+\_\+\+Dimensions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classBuild__Map_a4471712db8fbd8c8bc2fdefe8c0f551d}{}\label{classBuild__Map_a4471712db8fbd8c8bc2fdefe8c0f551d}
+
+
+World\+\_\+\+Dimensions function returns the Discretized World Dimensions. 
+
+\begin{DoxyReturn}{Returns}
+World of type integer vector \& contains Discretized World Dimensions 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\index{Build\+\_\+\+Map@{Build\+\_\+\+Map}!Boundary@{Boundary}}
+\index{Boundary@{Boundary}!Build\+\_\+\+Map@{Build\+\_\+\+Map}}
+\subsubsection[{\texorpdfstring{Boundary}{Boundary}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$double$>$ Build\+\_\+\+Map\+::\+Boundary}\hypertarget{classBuild__Map_a56252a2d4d8971e370547cdb8a67eb8f}{}\label{classBuild__Map_a56252a2d4d8971e370547cdb8a67eb8f}
+Boundary of type double vector, Stores World Boundary Data \index{Build\+\_\+\+Map@{Build\+\_\+\+Map}!World@{World}}
+\index{World@{World}!Build\+\_\+\+Map@{Build\+\_\+\+Map}}
+\subsubsection[{\texorpdfstring{World}{World}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$int$>$ Build\+\_\+\+Map\+::\+World}\hypertarget{classBuild__Map_ae65f595ae4825d69ae9e70d664beb644}{}\label{classBuild__Map_ae65f595ae4825d69ae9e70d664beb644}
+World of type integer vector, Stores Discretized World Dimensions \index{Build\+\_\+\+Map@{Build\+\_\+\+Map}!xy\+\_\+res@{xy\+\_\+res}}
+\index{xy\+\_\+res@{xy\+\_\+res}!Build\+\_\+\+Map@{Build\+\_\+\+Map}}
+\subsubsection[{\texorpdfstring{xy\+\_\+res}{xy_res}}]{\setlength{\rightskip}{0pt plus 5cm}double Build\+\_\+\+Map\+::xy\+\_\+res}\hypertarget{classBuild__Map_a8aaaec9d533e5ea2c98045a7727389d7}{}\label{classBuild__Map_a8aaaec9d533e5ea2c98045a7727389d7}
+x,y,z Resolutions and Robot Dimensions Margin Data of type double 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{Build__Map_8h}{Build\+\_\+\+Map.\+h}\item 
+app/\hyperlink{Build__Map_8cpp}{Build\+\_\+\+Map.\+cpp}\end{DoxyCompactItemize}
