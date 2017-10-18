@@ -1,0 +1,9 @@
+./include/Planner.h:81:  Is this a non-const reference? If so, make const or use a pointer: std::set<Node*>& nodes_  [runtime/references] [2]
+Done processing ./include/Build_Map.h
+Done processing ./include/Planner.h
+Done processing ./test/main.cpp
+Done processing ./test/A_Star_Test.cpp
+Done processing ./app/main.cpp
+Done processing ./app/Planner.cpp
+Done processing ./app/Build_Map.cpp
+Total errors found: 1
