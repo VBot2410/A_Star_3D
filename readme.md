@@ -6,8 +6,10 @@
 ## Overview
 A* is a widely used algorithm for pathfinding in 2-D environments. This project takes the planning algorithm one step further and applies it to a 3-Dimensional environment.<br />
 This project's objective is to buid a planning module for Aerial Vehicles. Provided with the world boundary and Obstacle location data, the module provides the optimal path from start point to the goal by avoiding all obstacles.<br />
+This Project is developed using **C++11 Standards** and a compiler supporting c++11 is necessary to run the tests and demo.<br />
 Development of this project follows **Solo Iterative Process (SIP)**  model in Software Engineering.<br />
-Tested on Ubuntu 16.04 LTS with GCC 5.4.0.
+Tested on Ubuntu 16.04 LTS with GCC 5.4.0.<br />
+**List of Libraries and Softwares used** for development and their License information can be found [Here](https://docs.google.com/spreadsheets/d/1OG3C1JBhDQzr5JbrNKvgw2EXLqxJdgZZMIk44BRrPIw/edit#gid=590042139)
 
 
 ## Description
@@ -42,14 +44,17 @@ UML Diagrams can be found [Here](https://github.com/VBot2410/A_Star_3D/tree/mast
 ~~Implementation of Map Builder from Environment Boundary and Obstacle Data.~~<br />
 ~~Implementation of A* Planner.~~<br />
 ~~Release Version 1.0 of the Module.~~<br />
-**Version 1.0 is Now Online.**
+~~**Version 1.0 is Now Online.**~~<br />
+**Version 2.0 is Now Online.**
 
 ## To Do (Version 2.0)
-Explore Possibility of 3-D Plots.<br />
+~~Explore Possibility of 3-D Plots.<br />
 Add Manhattan Distance Heuristic Function.<br />
-Doxygen Comments and Documentation.<br />
+Doxygen Comments and Documentation.<br />~~
+**Version 2.0 is Now Online.**
 
 ## Build Instructions (Tested on Ubuntu 16.04 LTS with GCC 5.4.0.)
+### Compiler supporting c++11 is necessary to run the tests and demo.<br />
 ```
 git clone --recursive https://github.com/VBot2410/A_Star_3D
 cd <path to repository>
@@ -61,6 +66,21 @@ make
 Run tests: ./test/A_Star-test
 Run program: ./app/A_Star-app
 ```
+## Sample Output:<br />
+Start Point:(0,0.5,3) & Goal Point:(3.75,6.25,0)<br />
+X,Y,Z resolution 0.25 and Robot Dimensions Margin 0.2<br />
+The Planned Path was as follows:<br />
+
+![Here](https://github.com/VBot2410/A_Star_3D/blob/master/Results/Output.png)
+
+## Generating The Documentation
+Doxygen is Required for Generating the Documentation for this project.<br />
+More Information on Installation Instructions Can be Found [Here](https://www.stack.nl/~dimitri/doxygen/manual/install.html)<br />
+To Generate the Documentation, Navigate to the A_Star_3D directory and run following command<br />
+```
+doxygen A_Star_3D_Documentation
+```
+The Documentation will be Created in Doxygen Directory.
 ## License
 This Project is Licensed under the MIT License. Copy of the License Can be Found [Here](https://github.com/VBot2410/A_Star_3D/blob/master/LICENSE)
 
