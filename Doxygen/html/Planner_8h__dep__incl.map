@@ -1,6 +1,0 @@
-<map id="include/Planner.h" name="include/Planner.h">
-<area shape="rect" id="node2" href="$Build__Map_8h.html" title="This File contains the declarations of variables and methods for Build_Map class which Discretizes th..." alt="" coords="37,80,176,107"/>
-<area shape="rect" id="node4" href="$main_8cpp.html" title="This project builds a discrete 3&#45;D map from environment information and Implements the A* algorithm t..." alt="" coords="163,155,263,181"/>
-<area shape="rect" id="node5" href="$Planner_8cpp.html" title="This file contains the code for Planner Class which takes the Environment data built by the Build_Map..." alt="" coords="251,80,367,107"/>
-<area shape="rect" id="node3" href="$Build__Map_8cpp.html" title="This File contains the code for Build_Map class which Discretizes the World using resolution values a..." alt="" coords="5,155,139,181"/>
-</map>
