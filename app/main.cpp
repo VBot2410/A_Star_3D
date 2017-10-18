@@ -116,11 +116,12 @@ int main() {
                               { Goal_Node[0], Goal_Node[1], Goal_Node[2] });
 
     /** Print the Path */
+    std::cout << "X\tY\tZ\n";
     for (auto& coordinate : path) {
       std::vector<int> Discrete_Node = { coordinate.x, coordinate.y, coordinate
           .z };
       std::vector<double> Coordinates = Map.Get_Coordinate(Discrete_Node);
-      std::cout << Coordinates[0] << " " << Coordinates[1] << " "
+      std::cout << Coordinates[0] << "\t" << Coordinates[1] << "\t"
           << Coordinates[2] << "\n";
     }
   }
